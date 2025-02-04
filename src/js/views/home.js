@@ -1,16 +1,18 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { CardNave } from "../component/cardnave";
 
 
 export const Home = () => {
+
+	const { store } = useContext(Context);
 	
 	return (
-		<div className="text-center mt-5">
+		<div className="row text-center mt-5">
 			<h1>naves</h1>
-			<CardNave />
-
+			
+			{store.naves.map((nave) => <CardNave key={nave.url} url={nave.url} name={nave.name} model={nave.model}/>)}
 		</div>
 	)
 };
