@@ -13,7 +13,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			naves: []
+			naves: [],
+			planets: [],
+			people: [],
+			favotites: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -24,6 +27,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				fetch('https://swapi.dev/api/starships')
 					.then((response) => response.json())
 					.then((data) => setStore({ naves: data.results }))
+
+					fetch('https://swapi.dev/api/planets')
+					.then((response) => response.json())
+					.then((data) => setStore({ planets: data.results }))
+
+					fetch('https://swapi.dev/api/people')
+					.then((response) => response.json())
+					.then((data) => setStore({ people: data.results }))
 			},
 			changeColor: (index, color) => {
 				//get the store

@@ -3,27 +3,28 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Nave = (props) => {
+export const Planet = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
-  const [detail, setDetail] = useState({});
+  const [planetdetail, setPlanetdetail] = useState({});
 
   useEffect(() => {
-    fetch("https://swapi.dev/api/starships/" + params.nave_url)
+    fetch("https://swapi.dev/api/planets/" + params.planet_url)
       .then((response) => response.json())
-      .then((data) => setDetail(data));
+      .then((data) => setPlanetdetail(data));
   }, []);
 
   return (
     <div className="jumbotron">
-      <h1 className="display-4">Info nave {params.nave_url}</h1>
+      <h1 className="display-4">Info Planet {params.planet_url}</h1>
 
       <ul className="detail-list">
-        <li><strong>Name:</strong> {detail.name}</li>
-        <li><strong>Model:</strong> {detail.model}</li>
-        <li><strong>Manufacturer:</strong> {detail.manufacturer}</li>
-        <li><strong>Passengers:</strong> {detail.passengers}</li>
-        <li><strong>Cargo Capacity:</strong> {detail.cargo_capacity}</li>
+        <li><strong>Name:</strong> {planetdetail.name}</li>
+        <li><strong>Rotation period:</strong> {planetdetail.rotation_period}</li>
+        <li><strong>climate:</strong> {planetdetail.climate}</li>
+        <li><strong>gravity:</strong> {planetdetail.gravity}</li>
+        <li><strong>surface_water:</strong> {planetdetail.surface_water}</li>
+        
       </ul>
 
       <hr className="my-4" />
@@ -37,6 +38,6 @@ export const Nave = (props) => {
   );
 };
 
-Nave.propTypes = {
+Planet.propTypes = {
   match: PropTypes.object,
 };
