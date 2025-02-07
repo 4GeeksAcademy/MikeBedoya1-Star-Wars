@@ -5,6 +5,8 @@ import "../../styles/demo.css";
 import { Link } from "react-router-dom";
 
 
+
+
 export const CardNave = (props) => {
     const { store, actions } = useContext(Context);
     
@@ -13,10 +15,11 @@ export const CardNave = (props) => {
             <img src={rigoImage} className="card-img-top" alt="..." />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
-                <p className="card-text">{props.model}</p>
+                <p className="card-text">Model: {props.model}</p>
                 <Link to={"/nave/" + props.url}>
                     <button className="btn btn-primary">Learn more {props.url}</button>
                 </Link>
+                <button onClick={()=> actions.addFavorites(props.name)}>heart</button>
             </div>
         </div>
     )

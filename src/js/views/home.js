@@ -3,8 +3,8 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { CardNave } from "../component/cardnave";
 import { CardPlanet } from "../component/cardplanet";
-import { Planet } from "./planet";
 import { CardPeople } from "../component/cardpeople";
+
 
 
 export const Home = () => {
