@@ -23,7 +23,7 @@ export const FavoritesButton = (props) => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-            Favorites <span>{store.favorites.length}</span> 
+                Favorites <span>{store.favorites.length}</span>
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 {store.favorites.map((fav, index) => (

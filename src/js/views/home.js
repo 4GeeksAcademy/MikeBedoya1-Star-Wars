@@ -6,14 +6,13 @@ import { CardPlanet } from "../component/cardplanet";
 import { CardPeople } from "../component/cardpeople";
 
 
-
 export const Home = () => {
 
 	const { store } = useContext(Context);
 
 	return (
 		<>
-		<div className="row text-center mt-5">
+		<div className="row text-start mt-5">
 			<h1 className="text-danger">People</h1>
 			<div className="row flex-row flex-nowrap" style={{overflowX: 'auto'}}> 
 			{store.people.map((person) => <CardPeople key={person.url}
@@ -23,7 +22,7 @@ export const Home = () => {
 			
 		</div>
 
-		<div className="row text-center mt-5">
+		<div className="row text-start mt-5">
 			<h1 className="text-danger">Planets</h1>
 			<div className="row flex-row flex-nowrap" style={{overflowX: 'auto'}}> 
 			{store.planets.map((planet) => <CardPlanet key={planet.url}
@@ -32,7 +31,7 @@ export const Home = () => {
 			</div>
 			
 		</div>
-		<div className="row text-center mt-5">
+		<div className="row text-start mt-5">
 			<h1 className="text-danger">Starships</h1>
 			<div className="row flex-row flex-nowrap" style={{overflowX: 'auto'}}> 
 			{store.naves.map((nave) => <CardNave key={nave.url}

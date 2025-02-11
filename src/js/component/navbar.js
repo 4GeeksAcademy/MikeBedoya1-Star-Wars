@@ -12,7 +12,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mx-3 mb-0 h1">
-					<img id="star-icon" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/star-wars-3200442-2662302.png" alt="Star Wars Logo" />
+					<img id="star-icon" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/star-wars-3200442-2662302.png" alt="Star Wars Logo" style={{ width: "60px" }}/>
 				</span>
 			</Link>			
 			<div className="row mx-5 ml-auto">
